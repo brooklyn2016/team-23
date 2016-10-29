@@ -26,31 +26,39 @@ app = Flask(__name__) #determines root path
 # 					password = #password
 # 					db = "FTS")
 
-
-@app.route('/') #currently routes this function to homepage (this decorator maps routing function to the return value)
-def test():
-
-	return "this is the homepage" #can return html code in the return statement
-
 #if app.route contains a value other than "/", like "/tuna" then we are
-
+@app.route('/') #currently routes this function to homepage (this decorator maps routing function to the return value)
 def surveyQuery(userInput = None, questNum = None, question = None, answer = None, date = None):
 	cur = db.cursor()
 	
 	if (questNum != none): 
 		cur.execute("SELECT questionNumber FROM FTS WHERE questionNumber = " + questNum)
 
-		result = "<p>" #store as an html script
-		##will have to print this to the user interface
-		for row in cur.fetchall():
-	 	    #store row in a variable for printing
-	 	    result = result + row +"<br>"
-
 	 	return result + "</p>"
-	 	
-	 else if (question != None):
 
-	 	cur.execute("SELECT question FROM FTS WHERE ")
+	else if (question != None):
+
+		cur.execute("SELECT question FROM FTS WHERE question = " + question)
+
+	else if (answer != None):
+
+		cur.execute("SELECT answer FROM FTS WHERE answer = " + answer)
+
+	else if (date != None):
+
+		cur.execute("SELECT date FROM FTS WHERE date = " + date)
+
+	
+
+	result = "<p>" #store as an html script
+
+	##will have to print this to the user interface
+	for row in cur.fetchall():
+ 	    #store row in a variable for printing
+ 	    result = result + row +"<br>"
+
+ 	return result + "</p>" #can return html code in the return statement
+
 
 if __name__ == "__main__": #tests if the script is ran from the main file
 	app.run(debug=True)
