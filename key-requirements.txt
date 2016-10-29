@@ -1,0 +1,43 @@
+-----General:-----
+
+-They work with/through local communities
+-Often have issues getting local communities to believe/understand what is happening
+-Slavery is defined as: being forced or coerced to work without pay, under the threat of violence or other serious harm, and being unable to walk away
+-Large percentage of field workers have smart phones
+-GOAL: determine the impact of this organization through analyzing data
+-Analytics are run every quarter
+-Data is usually not personal, in the database it is general/statistical
+
+-----Key requirements:-----
+
+-Bilingual support - This organization is global
+-Often 3 or more languages
+-Redundancy of data
+-Incorporate images/icons - very user friendly
+-UI/UX design is IMPORTANT
+-Building a map?? - Social mapping, not GPS
+-Tool must be able to be used across languages
+-Data collection and aggregation
+-Data analytics to calculate IMPACT
+-CENTRALIZED DATABASE
+-On time collection, in various languages
+-No connectivity in field, but connectivity when back in offices
+-Database of a community as a whole
+
+-----Challenges they face:-----
+
+-Much data is on paper
+-Data gets lost
+
+-----Questions to ask:-----
+
+-What kind of data are they collecting?
+-Who are you contacting in the field about potential slavery incidents?
+-How do you draw conclusions from data?
+-Who is filling out the forms? People in community give field workers info, they fill out forms
+
+-----Our solution:-----
+-Mobile application
+-Form that appears on a phone or tablet
+-Questions can appear in multiple languages
+-Questions can be spoken out loud, in cases where people are illiterate (list of languages will be posted)
