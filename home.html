@@ -2,16 +2,152 @@
 <html ng-app="myApp">
 <head>
     <title>Free The Slaves Admin</title>
+    
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!--<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.js"></script>-->
-    <!-- to be implemented: <script src ="js/main.js"></script>-->
+    <script src ="js/main.js"></script>
+    
+    <!-- this is the js bootstrap and jquery stuff -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>  
+    <!--/jquery & /bootstrap -->
+
 </head>
 
 
 <body>
+<div class="container">
+  <div id="header">
+    </br></br>
+    <img src="./jumbotron.png" width="70%" height="230px" id="logo"/>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        
+        <a href="#" class="pull-left"><img src="./black_hi-res.jpg" width="38px" height="50px"/></a>
+        <a class="navbar-brand" href="#" id="FTS">Free The Slaves</a>
+         
+         <!-- this is for mobile site -->
+         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+
+         <div class="collapse navbar-collapse navHeaderCollapse">
+             <ul class="nav navbar-nav navbar-right">
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="./new.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Log In</a></li>
+             </ul>
+        </div><!--the end of the first navbar-->
+      </div>
+    </div>
+
+    <div class="jumbotron">
+		<!--<img src="./jumbotron.png">-->
+		<p>dskfjklsd sd;kfjksd sdfkldsjfk ds sdkfljsdkf skdfjksd </p>
+	</div>
+
+    <!-- the second menu bar that disappears-->
+    <div class="navbar navbar-inverse navbar-static-top" id="secondNavbar">
+        <div class="container">
+
+         <!-- this is for mobile site -->
+         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+
+         <div class="collapse navbar-collapse navHeaderCollapse">
+             <ul class="nav navbar-nav navbar-left">
+                 <li class="active"><a href="#">Home</a></li>
+                 <li class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./earrings.html">Rings</a></li>
+                        <li><a href="./neckies2.html">Necklaces</a></li>
+                        <li><a href="./bracelets.html">Bracelets</a></li>
+                    </ul>
+                     
+                 </li>
+                 <li><a href="./new.html">New</a></li>
+                 <li><a href="./customize.html">Customize</a></li>
+                 <li><a href="./sale.html">Sale</a></li>
+                 <li><a href="./about.html">About</a></li>
+                 <li><a href="./contact.html">Contact</a></li>
+             </ul>
+          </div><!--the end of the navbar-->
+      </div>
+  </div>
+</div><!--the end of the header-->
+
+<div class="container" id="lastestSurvey">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>Latest Survey Results:</h1>
+			</br></br>
+			<h3>Ghana Accra Office Recent Survey Submission</h3>
+
+			<button type="submit" class = "btn-warning btn-sm">See Complete Data</button>
+		</div>
+
+		<div class="col-md-4">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+
+			<!-- The table class adds nice spacing and the other classes add additional style -->
+		    <table class="table table-bordered table-striped table-hover">
+		    <thead>
+		    <tr>
+		    <td colspan="4">Weekly Stats</td>
+		    </tr>
+		    </thead>
+		    <tbody>
+		    <tr>
+		 
+		    <!-- You can adjust the width of table columns as well -->
+		    <th class="col-md-2"></td>
+		 
+		    <!-- Use text alignment like text-center or text-right -->
+		    <th class="text-center">Average</td>
+		    <th class="text-center">RBIs</td>
+		    <th class="text-center">Homeruns</td>
+		    </tr>
+		    <tr>
+		    <td><a href="#">Hank Aaron*</a></td>
+		    <td>.305</td>
+		    <td>2297</td>
+		    <td>755</td>
+		    </tr>
+		    <tr>
+		    <td><a href="#">Babe Ruth*</a></td>
+		    <td>.342</td>
+		    <td>2214</td>
+		    <td>714</td>
+		    </tr>
+		    <tr>
+		    <td><a href="#">Barry Bonds</a></td>
+		    <td>.298</td>
+		    <td>1996</td>
+		    <td>762</td>
+		    </tr>
+		    </tbody>
+		    </table>
+
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
