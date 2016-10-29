@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:"http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="appinventor.ai_mathew_mullen_mechtly.CodeForGood" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-sdk android:minSdkVersion="4" />
+    <application android:label="CodeForGood" android:icon="@drawable/ya" android:name="com.google.appinventor.components.runtime.multidex.MultiDexApplication" android:debuggable="false">
+        <activity android:name="appinventor.ai_mathew_mullen_mechtly.CodeForGood.A_Screen" android:configChanges="keyboard|keyboardHidden|orientation" android:windowSoftInputMode="2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="appinventor.ai_mathew_mullen_mechtly.CodeForGood.B_Screen" android:configChanges="keyboard|keyboardHidden|orientation" android:windowSoftInputMode="2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Screen1" android:configChanges="keyboard|keyboardHidden|orientation" android:windowSoftInputMode="2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="appinventor.ai_mathew_mullen_mechtly.CodeForGood.initial_Info" android:configChanges="keyboard|keyboardHidden|orientation" android:windowSoftInputMode="2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="appinventor.ai_mathew_mullen_mechtly.CodeForGood.more_info" android:configChanges="keyboard|keyboardHidden|orientation" android:windowSoftInputMode="2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.appinventor.components.runtime.ListPickerActivity" android:screenOrientation="behind" android:configChanges="keyboardHidden|orientation" />
+    </application>
+</manifest>
