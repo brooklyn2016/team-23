@@ -8,10 +8,10 @@
  
 
 <meta name="viewport" content="width = device-width, initial-scale = 1">
-<!-- add title--> 
+
 <font face "courier new"> <title>Free the Slaves </title> </font> 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <!-- add a background color--> 
+ 
 <style>
 .jumbotron{
     background-color:#008080;
@@ -41,23 +41,35 @@
  
 
 <div class="jumbotron">
-<p>Make a selection</p>
+<p>Free the Slaves</p>
  
 <p>
 
-<a href="#" class = "btn btn-default btn-lg" role="Question">Question</a>
-<a href="#" class = "btn btn-default btn-lg" role="Answer">Answer</a>
-<a href="#" class = "btn btn-default btn-lg" role="Date">Date</a>
-<a href="#" class = "btn btn-default btn-lg" role="Business Quarter">Business Quarter</a>
+    <!-- <a href="#" class = "btn btn-default btn-lg" role="Question">Question</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Answer">Answer</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Date">Date</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Business Quarter">Business Quarter</a> -->
+<!--
+<button type="submit" class = "btn btn-danger" role = "button">Button</button>
+<input type="button" value="Info" class = "btn btn-info">
+<button type="submit" class = "btn-primary btn-sm">Primary</button>
+<button type="submit" class = "btn btn-success btn-xs">Success</button>
+<button type="submit" class = "btn btn-warning btn-lg">Warning</button>
+<button type="submit" class = "btn btn-link btn-lg">Link</button>
+ -->
 
+<button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary</button>
+ 
 
-    
-      
-      
-    </div>
+  <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
+  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+    <form action = "/" method="POST">
+        <button name = "button1" type="submit" class="btn btn-default" value = "Question">question</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Answer">answer</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Date">date</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Buisness Quarter">date</button>
+    </form>
   </div>
-</div>
-</div>
 
 </p>
 
@@ -69,40 +81,6 @@
 </div>
  
 <div class="container">
-
-<div class="container">
-<div class="row">
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-    <div class="thumbnail">
-      
-      <div class="caption">
-        <h3>About Us</h3>
-        <p>"Slavery is defeated when at-risk communities acquire the knowledge, tools and resources they need to overcome vulnerability and secure freedom."</p>
-        
-      </div>
-      </div>
-  </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-    <div class="thumbnail">
-      
-      <div class="caption">
-        <h3>Slavery Today</h3>
-        <p>"Slavery remins one of the greatest human rights challenges of history. TOday it's largely hidden from sight. People now are trapped by different forces--less visible, but just as powerful"</p>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-    <div class="thumbnail">
-      
-      <div class="caption">
-        <h3>Our Model For Freedom</h3>
-        <p>"Our Model for Freedom sets Free the Slaves apart. Our Community-based strategy is targeted, empowering, collaborative and holisitc. We go where slavery flourishes, research what makes people vulnerable--then strengthen communities and local organizations to combat slavery at its roots"</p>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
  
 
 <div class="container">
@@ -114,7 +92,22 @@
 </div>
 </div><br>
  
-
+<!-- INPUT GROUPS -->
+<div class="container">
+ 
+<!-- We can add text or buttons on the right and/or left of input elements. Use input-group-lg or input-group-sm for input sizing -->
+<div class="input-group input-group-lg">
+  <span class="input-group-addon">Input</span>
+  <input type="text" class="form-control" placeholder="">
+</div><br>
+ 
+<div class="input-group input-group-sm">
+  <form action = "/survey" method="post">
+    <input type="text" name="userInput" class="form-control" placeholder="">
+  </form>
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button">Enter</button>
+  </span>
 </div><br>
  
 
@@ -122,7 +115,7 @@
     <div class="input-group">
       <span class="input-group-addon">
  
-        
+        <!-- Change to radio for radio -->
         <input type="checkbox">
       </span>
       <input type="text" class="form-control">
@@ -136,29 +129,33 @@
  
 </div>
  
+<!-- Collapsible Navigation Bar -->
 <div class="container">
-
+ 
+<!-- .navbar-fixed-top, or .navbar-fixed-bottom can be added to keep the nav bar fixed on the screen -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
  
-
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
  
-
+      <!-- Button that toggles the navbar on and off on small screens -->
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-
+ 
+      <!-- Hides information from screen readers -->
         <span class="sr-only"></span>
  
-        
+        <!-- Draws 3 bars in navbar button when in small mode -->
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
  
-    
+      <!-- You'll have to add padding in your image on the top and right of a few pixels (CSS Styling will break the navbar) -->
+      <a class="pull-left" href="#"><img src="NTTLogosm.png"></a>
     </div>
  
-    
+    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
@@ -172,15 +169,20 @@
           </ul>
         </li>
       </ul>
+<<<<<<< HEAD
       
       <form class="navbar-form navbar-right" role="search" action="./home.html">
+=======
+      <!-- navbar-left will move the search to the left -->
+      <form class="navbar-form navbar-right" role="search">
+>>>>>>> 8de0f319ae1d26bd5ee009d465bd4cfd35a31367
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-    </div>
-  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 </div>
 <br>
