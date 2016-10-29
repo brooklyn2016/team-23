@@ -1,0 +1,15 @@
+-----Location Info-----
+Village: village2
+District: district1
+Date: 10-29-2016
+
+-----Data Sheet A-----
+1: Partially True
+2: Completely True
+3: Completely Untrue
+4: Partially True
+
+-----Data Sheet B-----
+1: Some Residents
+2: All Residents
+3: No Residents
