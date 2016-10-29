@@ -17,40 +17,63 @@
 # Read more: http://dev.mysql.com/doc/refman/5.1/en/server-options.html#option_mysqld_bind-address
 
 import MySQLdb
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__) #determines root path
 
-# db = MySQLdb.connect(host = #using the server ip address
-# 					user = #username
-# 					password = #password
-# 					db = "FTS")
+#using the server ip address
+db = MySQLdb.connect(host = '127.0.0.1',
+					user = 'root',
+					passwd = 'clapon88',
+					db = "FTS")
+
+cur = db.cursor()
+
+@app.route("/", methods=["GET","POST"])
+def fts(fieldSelect = None):
+	if(request.method == "POST"):
+		if(request.form["button1"] == 'Question'):
+			fieldSelect = 'Question'
+			print(fieldSelect)
+		elif(request.form["button1"] == 'Answer'):
+			fieldSelect = 'Answer'
+			print(fieldSelect)
+		elif(request.form["button1"] == 'Data'):
+			fieldSelect = 'Data'
+			print(fieldSelect)
+		elif(request.form["button1"] == 'Buisness Quarter'):
+			fieldSelect = 'Buisness Quarter'
+			print(fieldSelect)
+	elif(request.method == "GET"):
+		print("test1")
+	return render_template('fts.html', fieldSelect = fieldSelect)
+
 
 #if app.route contains a value other than "/", like "/tuna" then we are
-@app.route('/survey') #currently routes this function to homepage (this decorator maps routing function to the return value)
-def surveyQuery(userInput = None, questNum = None, question = None, answer = None, date = None, quarter = None):
+@app.route('/survey', methods = ['POST']) #currently routes this function to homepage (this decorator maps routing function to the return value)
+def surveyQuery(questNum = None, question = False, answer = False, date = False, quarter = False):
 
 	##NOTE: does not include language changing
-	cur = db.cursor()
+	userInput = request.args.get(fieldSelect)
 	
-	if (questNum != none): 
+	if (questNum != False): 
 		cur.execute("SELECT questionNumber FROM FTS WHERE questionNumber = " + userInput)
 
 	 	return result + "</p>"
 
-	else if (question != None):
+	elif (question != False):
 
 		cur.execute("SELECT question FROM FTS WHERE question = " + userInput)
 
-	else if (answer != None):
+	elif (answer != False):
 
 		cur.execute("SELECT answer FROM FTS WHERE answer = " + userInput)
 
-	else if (date != None):
+	elif (date != False):
 
 		cur.execute("SELECT date FROM FTS WHERE date = " + userInput)
 
-	else if (quarter != None):
+	elif (quarter != False):
 
 		cur.execute("SELECT quarter FROM FTS WHERE quarter = " + userInput)
 
@@ -63,78 +86,76 @@ def surveyQuery(userInput = None, questNum = None, question = None, answer = Non
  	    #store row in a variable for printing
  	    result = result + row +"<br>" ##NEED TO KNOW IF THE ROW IS A TYPE STRING OR NOT
 
- 	return result + "</p>" #can return html code in the return statement
+ 	return result + "</p>", redirect ('/') #can return html code in the return statement
 
-@app.route('/fieldagent')
-def fAgentQuery(userInput = None, fieldAgentId = None, name = None, nativeLang = None):
-	##NOTE: does not include Spoken Language
+# @app.route('/fieldagent', methods = ['POST'])
+# def fAgentQuery( lname = False, fname = False, nativeLang = False):
+# 	##NOTE: does not include Spoken Language
 
-	cur = db.cursor()
+# 	userInput = request.form['userInput']
 
-	if (fieldAgentId != none): 
-		cur.execute("SELECT fieldAgentId FROM FTS WHERE fieldAgentId = " + userInput)
+# 	if (lname != False):
 
-	 	return result + "</p>"
+# 		cur.execute("SELECT lname FROM FTS WHERE lname = " + userInput)
 
-	else if (question != None):
+# 	elif (fname != False):
 
-		cur.execute("SELECT name FROM FTS WHERE name = " + userInput)
+# 		cur.execute("SELECT fname FROM FTS WHERE fname = " + userInput)
 
-	else if (answer != None):
+# 	elif (nativeLang != False):
 
-		cur.execute("SELECT nativeLang FROM FTS WHERE nativeLang = " + userInput)
-
-	else if (date != None):
-
-		cur.execute("SELECT date FROM FTS WHERE date = " + userInput)
+# 		cur.execute("SELECT 'native language' FROM FTS WHERE 'native language' = " + userInput)
 
 
-	result = "<p>" #store as an html script
+# 	result = "<p>" #store as an html script
 
-	##will have to print this to the user interface
-	for row in cur.fetchall():
- 	    #store row in a variable for printing
- 	    result = result + row +"<br>" ##NEED TO KNOW IF THE ROW IS A TYPE STRING OR NOT
+# 	##will have to print this to the user interface
+# 	for row in cur.fetchall():
+#  	    #store row in a variable for printing
+#  	    result = result + row +"<br>" ##NEED TO KNOW IF THE ROW IS A TYPE STRING OR NOT
 
- 	return result + "</p>" #can return html code in the return statement
+#  	return result + "</p>" #can return html code in the return statement
 
-@app.route('/community')
-def communQuery(userInput = None, communId = None, country = None, populatuon = None, avgIncome = None, city = None, state = None):
+# @app.route('/community', methods = ['POST'])
+# def communQuery(communId = False, country = False, populatuon = False, avgIncome = False, city = False, state = False):
 
-	cur = db.cursor()
+# 	userInput = request.form['userInput']
 
-	if (communId != none): 
-		cur.execute("SELECT communId FROM FTS WHERE communId = " + userInput)
+# 	if (communId != False): 
+# 		cur.execute("SELECT communId FROM FTS WHERE communId = " + userInput)
 
-	 	return result + "</p>"
+# 	 	return result + "</p>"
 
-	else if (question != None):
+# 	elif (country != False):
 
-		cur.execute("SELECT country FROM FTS WHERE country = " + userInput)
+# 		cur.execute("SELECT country FROM FTS WHERE country = " + userInput)
 
-	else if (answer != None):
+# 	elif (populatuon != False):
 
-		cur.execute("SELECT populatuon FROM FTS WHERE populatuon = " + userInput)
+# 		cur.execute("SELECT populatuon FROM FTS WHERE populatuon = " + userInput)
 
-	else if (date != None):
+# 	elif (avgIncome != False):
 
-		cur.execute("SELECT avgIncome FROM FTS WHERE avgIncome = " + userInput)
+# 		cur.execute("SELECT avgIncome FROM FTS WHERE avgIncome = " + userInput)
 
-	else if (date != None):
+# 	elif (city != False):
 
-		cur.execute("SELECT city FROM FTS WHERE city = " + userInput)
+# 		cur.execute("SELECT city FROM FTS WHERE city = " + userInput)
 
-	else if (date != None):
+# 	elif (state != False):
 
-		cur.execute("SELECT state FROM FTS WHERE state = " + userInput)
+# 		cur.execute("SELECT state FROM FTS WHERE state = " + userInput)
 
 
-	result = "<p>"
+# 	result = "<p>"
 
-	for row in cur.fetchall():
- 	    result = result + row +"<br>" ##NEED TO KNOW IF THE ROW IS A TYPE STRING OR NOT
+# 	for row in cur.fetchall():
+#  	    result = result + row +"<br>" ##NEED TO KNOW IF THE ROW IS A TYPE STRING OR NOT
 
- 	return result + "</p>"
+#  	return result + "</p>"
+
+
+# #add functionality to read the user input
 
 if __name__ == "__main__": #tests if the script is ran from the main file
 	app.run(debug=True)

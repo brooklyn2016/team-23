@@ -45,10 +45,10 @@
  
 <p>
 
-<a href="#" class = "btn btn-default btn-lg" role="Question">Question</a>
-<a href="#" class = "btn btn-default btn-lg" role="Answer">Answer</a>
-<a href="#" class = "btn btn-default btn-lg" role="Date">Date</a>
-<a href="#" class = "btn btn-default btn-lg" role="Business Quarter">Business Quarter</a>
+    <!-- <a href="#" class = "btn btn-default btn-lg" role="Question">Question</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Answer">Answer</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Date">Date</a>
+    <a href="#" class = "btn btn-default btn-lg" role="Business Quarter">Business Quarter</a> -->
 <!--
 <button type="submit" class = "btn btn-danger" role = "button">Button</button>
 <input type="button" value="Info" class = "btn btn-info">
@@ -56,19 +56,21 @@
 <button type="submit" class = "btn btn-success btn-xs">Success</button>
 <button type="submit" class = "btn btn-warning btn-lg">Warning</button>
 <button type="submit" class = "btn btn-link btn-lg">Link</button>
- 
+ -->
 
 <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary</button>
  
 
-<a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
-<div class="btn-group btn-group-lg" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">question</button>
-  <button type="button" class="btn btn-default">answer</button>
-  <button type="button" class="btn btn-default">date</button>
-  <button type="button" class="btn btn-default">date</button>
-</div>
- -->
+  <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
+  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+    <form action = "/" method="POST">
+        <button name = "button1" type="submit" class="btn btn-default" value = "Question">question</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Answer">answer</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Date">date</button>
+        <button name = "button1" type="submit" class="btn btn-default" value ="Buisness Quarter">date</button>
+    </form>
+  </div>
+
 </p>
 
 <p>
@@ -100,7 +102,9 @@
 </div><br>
  
 <div class="input-group input-group-sm">
-  <input type="text" class="form-control" placeholder="">
+  <form action = "/survey" method="post">
+    <input type="text" name="userInput" class="form-control" placeholder="">
+  </form>
   <span class="input-group-btn">
     <button class="btn btn-default" type="button">Enter</button>
   </span>
